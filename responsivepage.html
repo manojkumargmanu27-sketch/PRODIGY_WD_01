@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            transition: 0.3s ease;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background-color: #111;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        /* HOVER EFFECT */
+        ul li a:hover {
+            color: #00c3ff;
+            transform: scale(1.1);
+        }
+
+        /* SECTIONS */
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        }
+
+        .content {
+            background: linear-gradient(135deg, #232526, #414345);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #000000, #434343);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            ul {
+                gap: 15px;
+            }
+
+            section {
+                font-size: 28px;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION MENU -->
+    <nav id="navbar">
+        <div class="logo">ProDigy Infotech</div>
+        <ul>
+            <li><a href="#">01</a></li>
+            <li><a href="#">Comillas Negras</a></li>
+            <li><a href="#">Task-01</a></li>
+            <li><a href="#">Responsive Landing Page</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <section class="hero">Welcome</section>
+    <section class="content">Scroll Down</section>
+    <section class="footer">Thank You</section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+</body>
+</html>
